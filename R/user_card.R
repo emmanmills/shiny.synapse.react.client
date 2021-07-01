@@ -20,8 +20,7 @@ user_card <- function(size, owner_id, width = NULL, height = NULL) {
     reactR::reactMarkup(component),
     width = width,
     height = height,
-    package = 'shiny.synapse.react.client',
-    elementId = elementId
+    package = 'shiny.synapse.react.client'
   )
 }
 

@@ -7,9 +7,11 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  output$widgetOutput <- renderUser_card(
-    user_card("Hello world!")
-  )
+  output$widgetOutput <- {
+    x <- renderUser_card(
+      user_card()
+    )
+  }
 }
 
 shinyApp(ui, server)
