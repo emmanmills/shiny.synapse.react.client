@@ -19,6 +19,22 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+
+            /**
+             * File loader for supporting images, for example, in CSS files.
+             */
+            {
+                test: /\.(jpg|png|gif)$/,
+                use: 'file-loader'
+            },
+
+            /**
+             * File loader for supporting images, for example, in CSS files.
+             */
+            {
+                test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
+                use: 'file-loader'
             }
         ]
     },
