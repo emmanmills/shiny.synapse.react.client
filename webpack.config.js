@@ -10,13 +10,20 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)?$/,
-                exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env', '@babel/preset-react'],
-                    plugins: [['@babel/plugin-transform-runtime', {
-                        "corejs": 2
-                    }]]
+                    presets: [
+                        ['@babel/preset-env',
+                            {
+                                targets: {
+                                    esmodules: true
+                                }
+                            }
+                        ], '@babel/preset-react'],
+                    plugins: ["@babel/plugin-syntax-dynamic-import"]
+                    // plugins: [['@babel/plugin-transform-runtime', {
+                    //     "corejs": 2
+                    // }]]
                 }
             },
             // For CSS so that import "path/style.css"; works
